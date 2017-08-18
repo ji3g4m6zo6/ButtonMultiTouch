@@ -17,12 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        aButton.isExclusiveTouch = true
+        bButton.isExclusiveTouch = true
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress)) //Long function will call when user long press on button.
         bButton.addGestureRecognizer(longGesture)
         
         //這裡只要指向同一個 touchDown 即可，為了分辨我分開寫
-        aButton.addTarget(self, action: #selector(self.atouchDown), for: .touchDown)
-        bButton.addTarget(self, action: #selector(self.btouchDown), for: .touchDown)
+//        aButton.addTarget(self, action: #selector(self.atouchDown), for: .touchDown)
+//        bButton.addTarget(self, action: #selector(self.btouchDown), for: .touchDown)
     }
     
     func atouchDown() {
